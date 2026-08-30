@@ -7,6 +7,7 @@ import { Hero } from "@/components/sections/hero";
 import { Metrics } from "@/components/sections/metrics";
 import { SelectedSystems } from "@/components/sections/selected-systems";
 import { TechnologyEcosystem } from "@/components/sections/technology-ecosystem";
+import { contactDetails } from "@/data/contact";
 import { siteOrigin } from "@/lib/site-url";
 
 export default function Home() {
@@ -18,7 +19,7 @@ export default function Home() {
     address: { "@type": "PostalAddress", addressLocality: "Abuja", addressCountry: "NG" },
     email: "mailto:imdanielubani@gmail.com",
     url: siteOrigin,
-    sameAs: ["https://github.com/imdanielubani"],
+    sameAs: [contactDetails.linkedin.href, contactDetails.instagram.href],
     knowsAbout: ["System architecture", "Web engineering", "Mobile engineering", "AI integrations", "Real-time systems"],
   };
 

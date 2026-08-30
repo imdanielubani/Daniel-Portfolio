@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowUpRight, Mail } from "lucide-react";
+import { contactDetails, socialChannels } from "@/data/contact";
 
 const projectSignals = [
   {
@@ -23,22 +24,10 @@ const projectSignals = [
 const contactChannels = [
   {
     label: "Email",
-    value: "imdanielubani@gmail.com",
-    href: "mailto:imdanielubani@gmail.com?subject=Project%20inquiry",
-    external: false,
+    value: contactDetails.email,
+    href: `mailto:${contactDetails.email}?subject=Project%20inquiry`,
   },
-  {
-    label: "GitHub",
-    value: "github.com/imdanielubani",
-    href: "https://github.com/imdanielubani",
-    external: true,
-  },
-  {
-    label: "Resume",
-    value: "Experience and capabilities",
-    href: "/resume",
-    external: false,
-  },
+  ...socialChannels,
 ];
 
 export const metadata: Metadata = {
@@ -78,7 +67,7 @@ export default function ContactPage() {
             <p>Bring the difficult problem. I&apos;ll help turn it into a clear, production-ready system.</p>
             <a
               className="contact-page__primary"
-              href="mailto:imdanielubani@gmail.com?subject=Project%20inquiry"
+              href={`mailto:${contactDetails.email}?subject=Project%20inquiry`}
             >
               <span>
                 <small className="mono">Start a conversation</small>
@@ -131,8 +120,8 @@ export default function ContactPage() {
               <Link
                 key={channel.label}
                 href={channel.href}
-                target={channel.external ? "_blank" : undefined}
-                rel={channel.external ? "noreferrer" : undefined}
+                target={channel.href.startsWith("http") ? "_blank" : undefined}
+                rel={channel.href.startsWith("http") ? "noreferrer" : undefined}
               >
                 <span className="mono">{String(index + 1).padStart(2, "0")}</span>
                 <strong>{channel.label}</strong>
@@ -144,7 +133,7 @@ export default function ContactPage() {
 
           <footer className="contact-page__footer mono">
             <span>Daniel Ubani / Full Stack Software Engineer</span>
-            <Link href="/">Return to index</Link>
+            <Link href="/">Return home</Link>
             <span>Abuja, Nigeria / 2026</span>
           </footer>
         </div>

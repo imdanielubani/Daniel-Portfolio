@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowDownToLine, ArrowUpRight } from "lucide-react";
+import { contactDetails } from "@/data/contact";
 import { experience } from "@/data/experience";
 
 export const metadata: Metadata = {
@@ -17,7 +18,12 @@ export default function ResumePage() {
         <h1>Daniel<br /><span>Ubani.</span></h1>
         <div className="resume-hero__intro">
           <p>Full Stack Software Engineer building production systems across web, mobile, AI, fintech, hospitality, logistics, and real-time infrastructure.</p>
-          <a className="text-link" href="mailto:imdanielubani@gmail.com">Email Daniel <ArrowUpRight aria-hidden="true" /></a>
+          <div className="resume-hero__actions">
+            <a className="text-link" href={contactDetails.resume.href} download={contactDetails.resume.filename}>
+              {contactDetails.resume.label} <ArrowDownToLine aria-hidden="true" />
+            </a>
+            <a className="text-link" href={`mailto:${contactDetails.email}`}>Email Daniel <ArrowUpRight aria-hidden="true" /></a>
+          </div>
         </div>
       </header>
 
@@ -41,7 +47,9 @@ export default function ResumePage() {
 
       <footer className="resume-footer page-shell">
         <Link href="/">Back to portfolio</Link>
-        <p className="mono">PDF version pending approved source document</p>
+        <a className="mono" href={contactDetails.resume.href} download={contactDetails.resume.filename}>
+          {contactDetails.resume.label}
+        </a>
       </footer>
     </main>
   );

@@ -1,10 +1,10 @@
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowDownToLine, ArrowUpRight } from "lucide-react";
+import { contactDetails, socialChannels } from "@/data/contact";
 
 const contactLinks = [
-  { label: "Email", href: "mailto:imdanielubani@gmail.com" },
-  { label: "GitHub", href: "https://github.com/imdanielubani" },
-  { label: "Resume", href: "/resume" },
+  { label: "Email", href: `mailto:${contactDetails.email}` },
+  ...socialChannels.map(({ label, href }) => ({ label, href })),
 ];
 
 export function ContactSection() {
@@ -13,8 +13,8 @@ export function ContactSection() {
       <div className="page-shell contact__inner">
         <p className="eyebrow">Start a conversation</p>
         <h2>Have a difficult problem?<br /><span>Let&apos;s build the system.</span></h2>
-        <a className="contact__email" href="mailto:imdanielubani@gmail.com">
-          imdanielubani@gmail.com <ArrowUpRight aria-hidden="true" />
+        <a className="contact__email" href={`mailto:${contactDetails.email}`}>
+          {contactDetails.email} <ArrowUpRight aria-hidden="true" />
         </a>
         <div className="contact__bottom">
           <div className="contact__links">
@@ -23,7 +23,9 @@ export function ContactSection() {
                 {link.label} <ArrowUpRight aria-hidden="true" />
               </Link>
             ))}
-            <span className="contact__pending">LinkedIn / URL pending</span>
+            <a href={contactDetails.resume.href} download={contactDetails.resume.filename}>
+              {contactDetails.resume.label} <ArrowDownToLine aria-hidden="true" />
+            </a>
           </div>
           <p className="mono">Daniel Ubani / Abuja, Nigeria / 2026</p>
         </div>

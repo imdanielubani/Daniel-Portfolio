@@ -16,7 +16,7 @@ export function Hero() {
   const reduceMotion = useReducedMotion();
 
   return (
-    <section className="hero" id="index" aria-labelledby="hero-title">
+    <section className="hero" id="home" aria-labelledby="hero-title">
       <div className="hero__grid" aria-hidden="true" />
       {!reduceMotion && <SystemCore />}
       <div className="hero__signal signal-line" aria-hidden="true">

@@ -2,10 +2,11 @@
 
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
 const links = [
-  { label: "Index", href: "/#index" },
+  { label: "Home", href: "/#home" },
   { label: "Work", href: "/#work" },
   { label: "About", href: "/about" },
   { label: "Experience", href: "/#experience" },
@@ -13,8 +14,10 @@ const links = [
 ];
 
 export function Navigation() {
+  const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [compact, setCompact] = useState(false);
+  const needsSurface = pathname === "/resume" || pathname.startsWith("/work/");
 
   useEffect(() => {
     const onScroll = () => setCompact(window.scrollY > 48);
@@ -31,7 +34,7 @@ export function Navigation() {
   }, [open]);
 
   return (
-    <header className={`site-nav ${compact ? "site-nav--compact" : ""}`}>
+    <header className={`site-nav ${compact ? "site-nav--compact" : ""} ${needsSurface ? "site-nav--surface" : ""}`}>
       <Link href="/" className="site-nav__brand" aria-label="Daniel Ubani, home">
         <span>Daniel</span>
         <span>Ubani</span>
