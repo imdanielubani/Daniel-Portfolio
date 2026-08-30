@@ -7,6 +7,7 @@ import { Hero } from "@/components/sections/hero";
 import { Metrics } from "@/components/sections/metrics";
 import { SelectedSystems } from "@/components/sections/selected-systems";
 import { TechnologyEcosystem } from "@/components/sections/technology-ecosystem";
+import { siteOrigin } from "@/lib/site-url";
 
 export default function Home() {
   const structuredData = {
@@ -16,7 +17,7 @@ export default function Home() {
     jobTitle: "Full Stack Software Engineer",
     address: { "@type": "PostalAddress", addressLocality: "Abuja", addressCountry: "NG" },
     email: "mailto:imdanielubani@gmail.com",
-    url: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
+    url: siteOrigin,
     sameAs: ["https://github.com/imdanielubani"],
     knowsAbout: ["System architecture", "Web engineering", "Mobile engineering", "AI integrations", "Real-time systems"],
   };

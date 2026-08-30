@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Navigation } from "@/components/layout/navigation";
 import { SmoothScroll } from "@/components/layout/smooth-scroll";
+import { siteUrl } from "@/lib/site-url";
 import "./globals.css";
 import "@/styles/portfolio.css";
 
@@ -17,10 +18,8 @@ const geistMono = Geist_Mono({
   display: "swap",
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
-
 export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
+  metadataBase: siteUrl,
   title: {
     default: "Daniel Ubani - Full Stack Software Engineer",
     template: "%s | Daniel Ubani",
