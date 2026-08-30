@@ -34,35 +34,37 @@ export function Navigation() {
   }, [open]);
 
   return (
-    <header className={`site-nav ${compact ? "site-nav--compact" : ""} ${needsSurface ? "site-nav--surface" : ""}`}>
-      <Link href="/" className="site-nav__brand" aria-label="Daniel Ubani, home">
-        <span>Daniel</span>
-        <span>Ubani</span>
-      </Link>
+    <>
+      <header className={`site-nav ${compact ? "site-nav--compact" : ""} ${needsSurface ? "site-nav--surface" : ""} ${open ? "site-nav--menu-open" : ""}`}>
+        <Link href="/" className="site-nav__brand" aria-label="Daniel Ubani, home">
+          <span>Daniel</span>
+          <span>Ubani</span>
+        </Link>
 
-      <nav className="site-nav__links" aria-label="Primary navigation">
-        {links.map((link) => (
-          <Link key={link.label} href={link.href}>
-            {link.label}
-          </Link>
-        ))}
-      </nav>
+        <nav className="site-nav__links" aria-label="Primary navigation">
+          {links.map((link) => (
+            <Link key={link.label} href={link.href}>
+              {link.label}
+            </Link>
+          ))}
+        </nav>
 
-      <div className="site-nav__availability">
-        <span className="status-dot" aria-hidden="true" />
-        Available
-      </div>
+        <div className="site-nav__availability">
+          <span className="status-dot" aria-hidden="true" />
+          Available
+        </div>
 
-      <button
-        type="button"
-        className="site-nav__toggle"
-        onClick={() => setOpen((value) => !value)}
-        aria-expanded={open}
-        aria-controls="mobile-navigation"
-        aria-label={open ? "Close navigation" : "Open navigation"}
-      >
-        {open ? <X aria-hidden="true" /> : <Menu aria-hidden="true" />}
-      </button>
+        <button
+          type="button"
+          className="site-nav__toggle"
+          onClick={() => setOpen((value) => !value)}
+          aria-expanded={open}
+          aria-controls="mobile-navigation"
+          aria-label={open ? "Close navigation" : "Open navigation"}
+        >
+          {open ? <X aria-hidden="true" /> : <Menu aria-hidden="true" />}
+        </button>
+      </header>
 
       <div id="mobile-navigation" className={`mobile-menu ${open ? "mobile-menu--open" : ""}`}>
         <nav aria-label="Mobile navigation">
@@ -78,6 +80,6 @@ export function Navigation() {
           <span>Abuja, Nigeria</span>
         </div>
       </div>
-    </header>
+    </>
   );
 }

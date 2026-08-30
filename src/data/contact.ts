@@ -17,8 +17,7 @@ export const contactDetails = {
   },
   resume: {
     label: "Download Resume",
-    href: "/resume/Daniel-Ubani-Resume.pdf",
-    filename: "Daniel-Ubani-Resume.pdf",
+    href: "https://docs.google.com/document/d/1Mhnu6zn-atOawnecT6eWfXXRhKQBcIdl/export?format=pdf",
   },
 } as const;
 

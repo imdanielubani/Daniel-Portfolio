@@ -23,7 +23,7 @@ export function ContactSection() {
                 {link.label} <ArrowUpRight aria-hidden="true" />
               </Link>
             ))}
-            <a href={contactDetails.resume.href} download={contactDetails.resume.filename}>
+            <a href={contactDetails.resume.href} target="_blank" rel="noreferrer">
               {contactDetails.resume.label} <ArrowDownToLine aria-hidden="true" />
             </a>
           </div>

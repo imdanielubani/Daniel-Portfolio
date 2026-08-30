@@ -19,7 +19,7 @@ export default function ResumePage() {
         <div className="resume-hero__intro">
           <p>Full Stack Software Engineer building production systems across web, mobile, AI, fintech, hospitality, logistics, and real-time infrastructure.</p>
           <div className="resume-hero__actions">
-            <a className="text-link" href={contactDetails.resume.href} download={contactDetails.resume.filename}>
+            <a className="text-link" href={contactDetails.resume.href} target="_blank" rel="noreferrer">
               {contactDetails.resume.label} <ArrowDownToLine aria-hidden="true" />
             </a>
             <a className="text-link" href={`mailto:${contactDetails.email}`}>Email Daniel <ArrowUpRight aria-hidden="true" /></a>
@@ -47,7 +47,7 @@ export default function ResumePage() {
 
       <footer className="resume-footer page-shell">
         <Link href="/">Back to portfolio</Link>
-        <a className="mono" href={contactDetails.resume.href} download={contactDetails.resume.filename}>
+        <a className="mono" href={contactDetails.resume.href} target="_blank" rel="noreferrer">
           {contactDetails.resume.label}
         </a>
       </footer>
