@@ -4,5 +4,6 @@ out/
 .env*
 !.env.example
 npm-debug.log*
+.next-*.log
 *.tsbuildinfo
 .DS_Store

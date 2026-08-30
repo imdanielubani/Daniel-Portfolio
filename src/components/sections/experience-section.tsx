@@ -16,14 +16,13 @@ export function ExperienceSection() {
         </header>
 
         <div className="experience__layout">
-          <div className="experience__timeline" role="list" aria-label="Experience timeline">
+          <div className="experience__timeline" aria-label="Experience timeline">
             {experience.map((item, index) => (
               <button
                 key={`${item.company}-${item.year}`}
                 type="button"
                 className={active === index ? "is-active" : ""}
                 onClick={() => setActive(index)}
-                role="listitem"
                 aria-pressed={active === index}
               >
                 <span className="mono">{item.year}</span>
