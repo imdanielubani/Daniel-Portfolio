@@ -12,6 +12,8 @@ export type Project = {
   descriptor: string;
   industry: string;
   summary: string;
+  coverImage: string;
+  coverAlt: string;
   role: string;
   year: string;
   technologies: string[];

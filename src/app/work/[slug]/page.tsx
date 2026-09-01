@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowRight } from "lucide-react";
@@ -20,7 +21,12 @@ export async function generateMetadata({ params }: ProjectPageProps): Promise<Me
     title: project.title,
     description: project.summary,
     alternates: { canonical: `/work/${project.slug}` },
-    openGraph: { title: `${project.title} | Daniel Ubani`, description: project.summary, url: `/work/${project.slug}` },
+    openGraph: {
+      title: `${project.title} | Daniel Ubani`,
+      description: project.summary,
+      url: `/work/${project.slug}`,
+      images: [{ url: project.coverImage, alt: project.coverAlt }],
+    },
   };
 }
 
@@ -52,6 +58,24 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           </div>
         </div>
       </header>
+
+      <section className={`case-visual case-visual--${project.accent}`} aria-label={`${project.title} product preview`}>
+        <div className="page-shell">
+          <figure>
+            <Image
+              src={project.coverImage}
+              alt={project.coverAlt}
+              fill
+              priority
+              sizes="(max-width: 820px) 100vw, 92vw"
+            />
+            <figcaption className="mono">
+              <span>{project.index} / Product interface</span>
+              <span>{project.industry}</span>
+            </figcaption>
+          </figure>
+        </div>
+      </section>
 
       <section className="case-story section page-shell" aria-labelledby="challenge-title">
         <div>

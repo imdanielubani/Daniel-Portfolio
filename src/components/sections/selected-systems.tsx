@@ -8,17 +8,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRef } from "react";
 import { projects } from "@/data/projects";
-import type { ProjectSlug } from "@/types/content";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
-
-const projectCovers: Record<ProjectSlug, string> = {
-  "retiro-del-rocio": "/images/projects/project-damas.avif",
-  cviqli: "/images/projects/project-najm.avif",
-  pavocard: "/images/projects/project-kavi.avif",
-  cardcentrals: "/images/projects/project-postwing.avif",
-  "nexryl-estate-os": "/images/projects/project-damas.avif",
-};
 
 export function SelectedSystems() {
   const section = useRef<HTMLElement>(null);
@@ -64,8 +55,8 @@ export function SelectedSystems() {
             >
               <div className="selected-system__media">
                 <Image
-                  src={projectCovers[project.slug]}
-                  alt=""
+                  src={project.coverImage}
+                  alt={project.coverAlt}
                   fill
                   sizes="(max-width: 820px) 100vw, (max-width: 1100px) 72vw, 44vw"
                 />

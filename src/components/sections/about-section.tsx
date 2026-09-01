@@ -19,8 +19,8 @@ export function AboutSection({ showPortrait = false }: AboutSectionProps) {
       <div className="page-shell about__layout">
         <div className="about__identity">
           <p className="eyebrow">Across the product lifecycle</p>
-          <h2 id="about-title">Engineer.<br />Designer.<br /><span>Builder.</span><br />Problem solver.</h2>
           {showPortrait && <PortraitMotion variant="home" />}
+          <h2 id="about-title">Engineer.<br />Designer.<br /><span>Builder.</span><br />Problem solver.</h2>
         </div>
         <div className="about__content">
           <p className="about__lead">I work from architecture and data models through APIs, interfaces, mobile experiences, integrations, deployment, and the operational reality after launch.</p>

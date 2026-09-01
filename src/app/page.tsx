@@ -27,13 +27,13 @@ export default function Home() {
     <main id="main-content" className="main-content">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
       <Hero />
+      <AboutSection showPortrait />
       <EngineeringStatement />
       <Metrics />
       <SelectedSystems />
       <ExperienceSection />
       <TechnologyEcosystem />
       <ArchitecturePlayground />
-      <AboutSection showPortrait />
       <ContactSection />
     </main>
   );

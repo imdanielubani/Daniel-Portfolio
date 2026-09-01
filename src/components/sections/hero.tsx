@@ -58,8 +58,8 @@ export function Hero() {
           </motion.p>
 
           <div className="hero__actions">
-            <Link className="button button--orange" href="#work">
-              Explore work <ArrowDownRight aria-hidden="true" />
+            <Link className="button button--orange" href="https://docs.google.com/document/d/1Mhnu6zn-atOawnecT6eWfXXRhKQBcIdl/export?format=pdf">
+              Download Resume <ArrowDownRight aria-hidden="true" />
             </Link>
             <Link className="button button--outline" href="/about">
               About me <ArrowUpRight aria-hidden="true" />

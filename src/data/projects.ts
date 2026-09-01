@@ -9,6 +9,8 @@ export const projects: Project[] = [
     industry: "Hospitality / Operations",
     summary:
       "A connected hotel operating system spanning Laravel administration, Flutter guest and staff tablets, payments, access control, and real-time communication.",
+    coverImage: "/images/projects/project-damas.avif",
+    coverAlt: "Retiro Del Rocio hotel operations product interface",
     role: "Full Stack Engineer",
     year: "2026",
     technologies: ["Laravel", "Livewire", "Flutter", "WebSockets", "Agora", "TTLock"],
@@ -16,8 +18,8 @@ export const projects: Project[] = [
       "Bring rooms, bookings, service teams, guest requests, billing, devices, and live communication into one coherent operational system.",
     solution:
       "A central Laravel API and administration layer coordinates role-specific tablet experiences for guests and hotel teams, with real-time events linking every operational surface.",
-    architecture: ["Laravel API", "Admin", "Guest Tablet", "Staff Tablets", "Database", "Real-time Layer"],
-    features: ["Rooms and bookings", "Guest services", "Kitchen and bar", "Housekeeping", "Maintenance", "Security", "Billing and payments", "Device management"],
+    architecture: ["Laravel API", "Admin", "Guest Tablet", "Staff Tablets", "Database", "Real-time Layer", "Flutter"],
+    features: ["Rooms and bookings", "Guest services", "Kitchen and bar Tablet", "Housekeeping Tablet", "Maintenance Tablet", "Security Tablet", "Billing and payments", "Device management" ],
     accent: "orange",
   },
   {
@@ -28,6 +30,8 @@ export const projects: Project[] = [
     industry: "Civic Technology / AI",
     summary:
       "A multilingual civic intelligence platform built around asking, clarifying, comprehending, and counselling across web and mobile.",
+    coverImage: "/images/projects/project-najm.avif",
+    coverAlt: "Cviqli civic intelligence product interface",
     role: "Full Stack Engineer",
     year: "2026",
     technologies: ["Next.js", "Flutter", "AI Streaming", "Voice", "Moderation"],
@@ -35,8 +39,8 @@ export const projects: Project[] = [
       "Make complex civic information accessible, conversational, multilingual, and safe across multiple devices and participation modes.",
     solution:
       "A streaming AI experience combines voice dictation, threaded discussion, mentions, moderation, and language-aware interfaces for English, Hausa, Yoruba, Igbo, and Pidgin.",
-    architecture: ["Web Client", "Mobile Client", "AI Orchestration", "Streaming API", "Moderation", "Content Store"],
-    features: ["Streaming AI", "Voice dictation", "Threaded comments", "Mentions", "Moderation", "Multilingual UX"],
+    architecture: ["Web Client", "Mobile Client", "AI Orchestration", "Streaming API", "Moderation", "Content Store", "Flutter"],
+    features: ["Streaming AI", "Voice dictation", "Threaded comments", "Mentions", "Moderation", "Multilingual UX", "Webapp", "Admin Dashboard","PostgrelSQL"],
     accent: "lime",
   },
   {
@@ -47,6 +51,8 @@ export const projects: Project[] = [
     industry: "Fintech",
     summary:
       "A Nigeria and Ghana fintech system connecting mobile, web, administration, payments, utilities, and resilient transaction infrastructure.",
+    coverImage: "/images/projects/project-kavi.avif",
+    coverAlt: "Pavocard multi-market fintech product interface",
     role: "Full Stack Engineer",
     year: "2026",
     technologies: ["Flutter", "Next.js", "Node.js", "PostgreSQL", "Redis", "Paystack"],
@@ -66,6 +72,8 @@ export const projects: Project[] = [
     industry: "Digital Commerce / Fintech",
     summary:
       "A gift card trading platform spanning customer mobile and web experiences, internal administration, pricing, settlement, and provider integrations.",
+    coverImage: "/images/projects/project-postwing.avif",
+    coverAlt: "Cardcentrals gift card trading product interface",
     role: "Full Stack Engineer",
     year: "2025",
     technologies: ["Flutter", "Next.js", "React", "Express", "PostgreSQL", "Redis"],
@@ -73,7 +81,7 @@ export const projects: Project[] = [
       "Create a reliable path from card submission and review through pricing, settlement, and internal operational control.",
     solution:
       "Purpose-built customer and administration surfaces share a transactional backend with cached pricing data and isolated payment and utility integrations.",
-    architecture: ["Mobile", "Web", "React Admin", "Express API", "PostgreSQL", "Redis"],
+    architecture: ["Mobile", "Web", "React Admin", "Express API", "PostgreSQL", "Redis", "Docker"],
     features: ["Gift card trading", "Rate management", "Trade review", "Settlement", "User accounts", "Operational admin"],
     accent: "orange",
   },
@@ -85,6 +93,8 @@ export const projects: Project[] = [
     industry: "Property Technology / Lab",
     summary:
       "An in-development estate platform connecting residents, operations, visitors, payments, maintenance, safety, and predictive intelligence.",
+    coverImage: "/images/projects/project-damas.avif",
+    coverAlt: "Nexryl EstateOS property operations product interface",
     role: "Creator / Full Stack Engineer",
     year: "2026",
     technologies: ["Flutter", "Next.js", "NestJS", "PostgreSQL", "Redis", "AI"],
