@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 
 const links = [
   { label: "Home", href: "/" },
-  { label: "Work", href: "/#work" },
+  { label: "Work", href: "/work" },
   { label: "About", href: "/about" },
   { label: "Experience", href: "/#experience" },
   { label: "Contact", href: "/contact" },
@@ -17,7 +17,7 @@ export function Navigation() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [compact, setCompact] = useState(false);
-  const needsSurface = pathname === "/resume" || pathname.startsWith("/work/");
+  const needsSurface = pathname === "/resume" || pathname.startsWith("/work");
 
   useEffect(() => {
     const onScroll = () => setCompact(window.scrollY > 48);

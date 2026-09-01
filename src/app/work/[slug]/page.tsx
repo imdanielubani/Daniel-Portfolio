@@ -4,6 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { ContactSection } from "@/components/sections/contact-section";
+import { ProjectLinks } from "@/components/work/project-links";
 import { SystemArchitecture } from "@/components/work/system-architecture";
 import { getProject, projects } from "@/data/projects";
 
@@ -41,7 +42,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
     <main id="main-content" className="case-page">
       <header className={`case-hero case-hero--${project.accent}`}>
         <div className="page-shell">
-          <Link className="case-back mono" href="/#work"><ArrowLeft aria-hidden="true" /> Back to systems</Link>
+          <Link className="case-back mono" href="/work"><ArrowLeft aria-hidden="true" /> Back to work</Link>
           <div className="case-hero__meta mono">
             <span>{project.index} / {project.status ? "Personal project" : "Selected system"}</span>
             <span>{project.industry}</span>
@@ -56,6 +57,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
               <strong>{project.role}</strong>
             </div>
           </div>
+          <ProjectLinks links={project.links} />
         </div>
       </header>
 

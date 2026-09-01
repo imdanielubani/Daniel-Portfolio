@@ -14,6 +14,10 @@ export type Project = {
   summary: string;
   coverImage: string;
   coverAlt: string;
+  links: {
+    live?: string;
+    playStore?: string;
+  };
   role: string;
   year: string;
   technologies: string[];
