@@ -33,7 +33,7 @@ export default function Home() {
       <ExperienceSection />
       <TechnologyEcosystem />
       <ArchitecturePlayground />
-      <AboutSection />
+      <AboutSection showPortrait />
       <ContactSection />
     </main>
   );

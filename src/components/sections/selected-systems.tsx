@@ -4,21 +4,21 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ArrowUpRight } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { useRef } from "react";
 import { projects } from "@/data/projects";
+import type { ProjectSlug } from "@/types/content";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
-function SystemVisual({ index }: { index: number }) {
-  return (
-    <div className={`system-visual system-visual--${index + 1}`} aria-hidden="true">
-      <span className="system-visual__core" />
-      {[0, 1, 2, 3, 4, 5].map((node) => <i key={node} style={{ "--node": node } as React.CSSProperties} />)}
-      <b />
-    </div>
-  );
-}
+const projectCovers: Record<ProjectSlug, string> = {
+  "retiro-del-rocio": "/images/projects/project-damas.avif",
+  cviqli: "/images/projects/project-najm.avif",
+  pavocard: "/images/projects/project-kavi.avif",
+  cardcentrals: "/images/projects/project-postwing.avif",
+  "nexryl-estate-os": "/images/projects/project-damas.avif",
+};
 
 export function SelectedSystems() {
   const section = useRef<HTMLElement>(null);
@@ -34,12 +34,12 @@ export function SelectedSystems() {
         pin: title.current,
         pinSpacing: false,
       });
-      gsap.utils.toArray<HTMLElement>(".system-card").forEach((card) => {
-        gsap.fromTo(card, { opacity: 0.25, scale: 0.88 }, {
+      gsap.utils.toArray<HTMLElement>(".selected-system").forEach((card) => {
+        gsap.fromTo(card, { opacity: 0.25, y: 72 }, {
           opacity: 1,
-          scale: 1,
+          y: 0,
           ease: "none",
-          scrollTrigger: { trigger: card, start: "top 88%", end: "top 48%", scrub: 0.6 },
+          scrollTrigger: { trigger: card, start: "top 92%", end: "top 54%", scrub: 0.55 },
         });
       });
     },
@@ -55,25 +55,43 @@ export function SelectedSystems() {
           <p>Complete products, operational platforms, and infrastructure built across industries.</p>
         </div>
 
-        <div className="work__grid">
-          {projects.map((project, index) => (
+        <div className="work__projects">
+          {projects.map((project) => (
             <Link
               href={`/work/${project.slug}`}
-              className={`system-card system-card--${index + 1} system-card--${project.accent}`}
+              className={`selected-system selected-system--${project.accent}`}
               key={project.slug}
             >
-              <div className="system-card__top mono">
-                <span>{project.index} / {project.status ? "Personal project" : "Selected system"}</span>
-                <ArrowUpRight aria-hidden="true" />
+              <div className="selected-system__media">
+                <Image
+                  src={projectCovers[project.slug]}
+                  alt=""
+                  fill
+                  sizes="(max-width: 820px) 100vw, (max-width: 1100px) 72vw, 44vw"
+                />
+                <span className="selected-system__index mono">{project.index}</span>
               </div>
-              <SystemVisual index={index} />
-              <div className="system-card__body">
-                <p className="mono">{project.industry}</p>
-                <h3>{project.title}</h3>
-                <p>{project.descriptor}</p>
-              </div>
-              <div className="system-card__tech mono">
-                {project.technologies.slice(0, 3).map((tech) => <span key={tech}>{tech}</span>)}
+
+              <div className="selected-system__content">
+                <div className="selected-system__meta mono">
+                  <span>{project.status ?? `${project.year} / Selected system`}</span>
+                  <span>{project.industry}</span>
+                </div>
+
+                <div className="selected-system__story">
+                  <p className="mono">{project.descriptor}</p>
+                  <h3>{project.title}</h3>
+                  <p>{project.summary}</p>
+                </div>
+
+                <div className="selected-system__footer">
+                  <div className="selected-system__tech mono">
+                    {project.technologies.slice(0, 4).map((tech) => <span key={tech}>{tech}</span>)}
+                  </div>
+                  <span className="selected-system__open" aria-hidden="true">
+                    <ArrowUpRight />
+                  </span>
+                </div>
               </div>
             </Link>
           ))}

@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Navigation } from "@/components/layout/navigation";
+import { Preloader } from "@/components/layout/preloader";
 import { SmoothScroll } from "@/components/layout/smooth-scroll";
 import { siteUrl } from "@/lib/site-url";
 import "./globals.css";
@@ -53,6 +54,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en" className={`${geist.variable} ${geistMono.variable}`}>
       <body>
+        <Preloader />
         <a className="skip-link" href="#main-content">
           Skip to content
         </a>

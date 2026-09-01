@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { PortraitMotion } from "@/components/about/portrait-motion";
 import { AboutSection } from "@/components/sections/about-section";
 import { ContactSection } from "@/components/sections/contact-section";
 
@@ -12,10 +13,11 @@ export default function AboutPage() {
   return (
     <main id="main-content" className="about-page">
       <section className="about-page__hero">
-        <div className="page-shell">
+        <div className="page-shell about-page__hero-inner">
           <p className="eyebrow">Daniel Ubani / Full Stack Software Engineer</p>
           <h1>I make complex systems feel <span>clear.</span></h1>
-          <p>My work sits where product thinking, system architecture, interface craft, and production engineering meet.</p>
+          <PortraitMotion variant="hero" priority />
+          <p className="about-page__hero-summary">My work sits where product thinking, system architecture, interface craft, and production engineering meet.</p>
         </div>
       </section>
       <AboutSection />
